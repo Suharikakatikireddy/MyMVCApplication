@@ -1,0 +1,69 @@
+﻿
+
+@model IEnumerable<MyMVCApplication.Models.Employee>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Employee</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Age
+        </th>
+    </tr>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(c => e.Id, new { @class = "form-control" })</td>
+            <td>@Html.DisplayFor(c => e.Name, new { @class = "form-control" })</td>
+            <td>@Html.DisplayFor(c => e.Address, new { @class = "form-control" })</td>
+            <td>@Html.DisplayFor(c => e.Email, new { @class = "form-control" })</td>
+            <td>@Html.DisplayFor(c => e.Age, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Edit","Edit",new { id=e.Id} )</td>
+        </tr>
+    }
+
+
+
+</table>
+@*<table>
+
+        <tr>
+            <td>Id : </td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Name : </td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Address : </td>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>@Model.Age</td>
+        </tr>
+    </table>*@
+
